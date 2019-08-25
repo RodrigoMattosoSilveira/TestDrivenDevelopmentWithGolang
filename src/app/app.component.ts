@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TestDrivenDevelopmentWithGolang';
+   // version =  `0.3.2-rc.1`;
+   
+   public appVersion: string = '0.1';
+   examples = [
+     {
+       name: 'Basic',
+       icon: '',
+       routeLink: 'basic'
+     },
+   ];
 }
