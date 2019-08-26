@@ -9,11 +9,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { MoneyExampleBasicComponent } from './money-example-basic/money-example-basic.component';
+import { TestDrivenDevelopmentServerService} from './utils/test-driven-development-server.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    MoneyExampleBasicComponent
   ],
   imports: [
     AngularMaterialModuleModule,
@@ -38,7 +41,9 @@ import { HomeComponent } from './home/home.component';
       },
     }),
   ],
-  providers: [],
+  providers: [
+     TestDrivenDevelopmentServerService
+ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
