@@ -13,11 +13,16 @@ export class MoneyExampleBasicComponent implements OnInit {
    basicMoneyExampleData: BasicMoneyExampleData;
    displayedColumns: string[] = ['underwriter', 'quantity', 'price', 'total'];
 
-  constructor(private testDrivenDevelopmentServerService: TddServerService) { }
+  constructor(private tddServerService: TddServerService) { }
 
   ngOnInit() {
-     this.basicMoneyExampleData = this.testDrivenDevelopmentServerService.getBasicMoneyExampleData();
-     console.log("MoneyExampleBasicComponent/basicMoneyExampleData: " + JSON.stringify(this.basicMoneyExampleData))
+      this.basicMoneyExampleData = this.tddServerService.getBasicMoneyExampleData();
+      console.log("MoneyExampleBasicComponent/basicMoneyExampleData: " + JSON.stringify(this.basicMoneyExampleData))
+
+      this.tddServerService.getMoneyExampleBasic().subscribe(
+         (results: string) => this.title = results, // success path
+         error =>  this.title = "Unable to retrieve title" // error path
+      );
   }
 
   ngAfterViewInit() {
