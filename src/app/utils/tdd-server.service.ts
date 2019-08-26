@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { BasicMoneyExampleAsset } from './basic-money-example-asset';
@@ -8,7 +9,7 @@ import { BasicMoneyExampleData } from './basic-money-example-data';
 })
 export class TddServerService {
 
-   constructor() { }
+   constructor(private http: HttpClient) { }
 
    getBasicMoneyExampleData(): BasicMoneyExampleData {
       // This will be replaced by a server call
@@ -32,5 +33,9 @@ export class TddServerService {
          "total": 65000
       }
       return basicMoneyExampleData;
+   }
+
+   getMoneyExampleBasic() {
+      return this.http.get<any>('/moneyExampleBasic');
    }
 }
