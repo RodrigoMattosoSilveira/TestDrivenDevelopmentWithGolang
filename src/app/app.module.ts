@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MoneyExampleBasicComponent } from './money-example-basic/money-example-basic.component';
-import { TestDrivenDevelopmentServerService} from './utils/test-driven-development-server.service';
+import { TddServerService} from './utils/tdd-server.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { TestDrivenDevelopmentServerService} from './utils/test-driven-developme
     }),
   ],
   providers: [
-     TestDrivenDevelopmentServerService
+     TddServerService
  ],
   bootstrap: [AppComponent]
 })

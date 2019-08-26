@@ -6,7 +6,7 @@ import { BasicMoneyExampleData } from './basic-money-example-data';
 @Injectable({
   providedIn: 'root'
 })
-export class TestDrivenDevelopmentServerService {
+export class TddServerService {
 
    constructor() { }
 

@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 import { BasicMoneyExampleData } from '../utils/basic-money-example-data';
-import { TestDrivenDevelopmentServerService } from '../utils/test-driven-development-server.service';
+import { TddServerService } from '../utils/tdd-server.service';
 
 @Component({
   selector: 'app-money-example-basic',
@@ -13,7 +13,7 @@ export class MoneyExampleBasicComponent implements OnInit {
    basicMoneyExampleData: BasicMoneyExampleData;
    displayedColumns: string[] = ['underwriter', 'quantity', 'price', 'total'];
 
-  constructor(private testDrivenDevelopmentServerService: TestDrivenDevelopmentServerService) { }
+  constructor(private testDrivenDevelopmentServerService: TddServerService) { }
 
   ngOnInit() {
      this.basicMoneyExampleData = this.testDrivenDevelopmentServerService.getBasicMoneyExampleData();
