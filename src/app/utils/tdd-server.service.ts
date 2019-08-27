@@ -35,7 +35,8 @@ export class TddServerService {
       return basicMoneyExampleData;
    }
 
+   // .
    getMoneyExampleBasic() {
-      return this.http.get<any>('/moneyExampleBasic');
+      return this.http.get<any>('/tdd/moneyExampleBasic');
    }
 }

@@ -9,7 +9,7 @@ import { TddServerService } from '../utils/tdd-server.service';
   styleUrls: ['./money-example-basic.component.scss']
 })
 export class MoneyExampleBasicComponent implements OnInit {
-   title: string = 'BasicMoneyExampleData';
+   title: string;
    basicMoneyExampleData: BasicMoneyExampleData;
    displayedColumns: string[] = ['underwriter', 'quantity', 'price', 'total'];
 
@@ -20,9 +20,13 @@ export class MoneyExampleBasicComponent implements OnInit {
       console.log("MoneyExampleBasicComponent/basicMoneyExampleData: " + JSON.stringify(this.basicMoneyExampleData))
 
       this.tddServerService.getMoneyExampleBasic().subscribe(
-         (results: string) => this.title = results, // success path
-         error =>  this.title = "Unable to retrieve title" // error path
-      );
+         // (results: string) => this.title = results, // success path
+         // error =>  this.title = "Unable to retrieve title" // error path
+         results =>{
+             // console.log(results);
+             console.log("MoneyExampleBasicComponent/basicMoneyExampleData: " + results);
+             this.title = results;
+         });
   }
 
   ngAfterViewInit() {
