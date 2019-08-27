@@ -44,7 +44,7 @@ func main() {
 	router := http.NewServeMux()
 	router.Handle("/", index())
 	router.Handle("/healthz", healthz())
-	router.Handle("/moneyExampleBasic", moneyExampleBasic())
+	router.Handle("/tdd/moneyExampleBasic", moneyExampleBasic())
 
 	nextRequestID := func() string {
 		return fmt.Sprintf("%d", time.Now().UnixNano())
@@ -111,9 +111,10 @@ func healthz() http.Handler {
 	})
 }
 
+// ..
 func moneyExampleBasic() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/moneyExampleBasic" {
+		if r.URL.Path != "/tdd/moneyExampleBasic" {
 			http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
 			return
 		}
