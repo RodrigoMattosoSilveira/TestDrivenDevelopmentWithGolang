@@ -2,7 +2,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
 
 # Introduction
-My objective is to write the examples in Kent Beck [Test-Driven Development By Example](https://www.eecs.yorku.ca/course_archive/2003-04/W/3311/sectionM/case_studies/money/KentBeck_TDD_byexample.pdf) using [Golang](https://golang.org/project/); my objective is to learn how to use the [Golang test framework](https://golang.org/pkg/testing/). The examples’ output will be shown by an an Angular application connected to a [simple Golang web server](https://github.com/enricofoltran/simple-go-server); my objective  is to learn Golang networking capabilities and grow this web server into a Golang Back End for a Front End, BFF. This is a [link](https://github.com/adonovan/gopl.io) to the repository with examples in The Go Programming Language book, from which I borrowed profusely.
+My objective is to write the examples in Kent Beck [Test-Driven Development By Example](https://www.eecs.yorku.ca/course_archive/2003-04/W/3311/sectionM/case_studies/money/KentBeck_TDD_byexample.pdf) using [Golang](https://golang.org/project/) to learn how to use the [Golang test framework](https://golang.org/pkg/testing/). The examples’ output will be shown by an an Angular application connected to a [simple Golang web server](https://github.com/enricofoltran/simple-go-server); my objective  is to learn Golang networking capabilities and grow this web server into a Golang Back End for a Front End, BFF.
 
 # The repository
 I will use a monorepo, to integrate the Angular application and the BFF.
@@ -74,3 +74,4 @@ The BFF server listens to a port (5000) different than the Angular application (
 - [nodemon](https://nodemon.io/) - a Node utility to monitor for any changes in your source and automatically restart your server; I used to monitor to server, since I get the client monitoring for free from the Angular;  
 - [npm-run-all](https://www.npmjs.com/package/npm-run-all) - A CLI tool to run multiple npm-scripts in parallel or sequential.
 - [Proxy To Backend](https://github.com/angular/angular-cli/wiki/stories-proxy) - Used to route BFF requests;
+- [The Go Programming Language source code](https://github.com/adonovan/gopl.io) - with examples in The Go Programming Language book, from which I borrowed profusely.
