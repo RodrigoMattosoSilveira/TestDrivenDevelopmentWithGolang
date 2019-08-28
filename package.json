@@ -11,9 +11,8 @@
     "e2e": "ng e2e",
     "app:start:aot": "ng serve --aot",
     "dev:run": "run-p app:start:aot server:run:watch",
-    "server:build": "run-s server:kill server:compile server:run",
+    "server:build": "run-s server:compile server:run",
     "server:compile": "go build -o dist/server/main src/server/main.go",
-    "server:kill": "lsof -ti tcp:3000 | xargs kill -9",
     "server:run": "./dist/server/main",
     "server:run:watch": "nodemon --delay 2000ms --signal SIGINT --watch src/server --ext go --ignore *.test.go --exec 'yarn server:build'"
   },
