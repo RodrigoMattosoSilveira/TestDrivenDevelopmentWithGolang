@@ -5,32 +5,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 My objective is to write the examples in Kent Beck [Test-Driven Development By Example](https://www.eecs.yorku.ca/course_archive/2003-04/W/3311/sectionM/case_studies/money/KentBeck_TDD_byexample.pdf) using [Golang](https://golang.org/project/) to learn how to use the [Golang test framework](https://golang.org/pkg/testing/). The examples’ output will be shown by an an Angular application connected to a [simple Golang web server](https://github.com/enricofoltran/simple-go-server); my objective  is to learn Golang networking capabilities and grow this web server into a Golang Back End for a Front End, BFF.
 
 # The repository
-I will use a monorepo, to integrate the Angular application and the BFF.
+I will use a simple Angular structure to integrate the Angular application and the BFF.
 ````
 TestDrivenDevelopmentWithGolang
-.git
-dist/
-node_modules/
-projects/
-    rmstek-sparklines\
-    living-style-guide-e2e\
-    living-style-guide\
-scripts/
-server/
-    where the server logic is located
-angular.json
-package.json
-travis.enc
-tsconfig.json
-tslint.json
-CHANGELOG.md
-LICENSE
-README.md
+src
+  app - Client source code
+  server - BFF source ```
 ````
-# The Angular application
+# The Angular client application
 It will evolve with the complexity of the examples.  There will be a route per example so that we can preserve them in their original state. It will render the tables, but it will not be responsible for any calculations.
 
-# The BFF
+# The back end for front end, BFF
 It will consist of a simple package with the web server, the examples, and the tests. It will serve a route per example, with each example living in its own file and having its own tests;
 
 # Implementation details
