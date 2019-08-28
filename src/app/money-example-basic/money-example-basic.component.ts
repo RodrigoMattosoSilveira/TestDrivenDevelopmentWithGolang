@@ -23,9 +23,8 @@ export class MoneyExampleBasicComponent implements OnInit {
          // (results: string) => this.title = results, // success path
          // error =>  this.title = "Unable to retrieve title" // error path
          results =>{
-             // console.log(results);
-             console.log("MoneyExampleBasicComponent/basicMoneyExampleData: " + results);
-             this.title = results;
+            console.log("MoneyExampleBasicComponent/basicMoneyExampleData: " + JSON.stringify(results));
+            this.title = results["Title"];
          });
   }
 

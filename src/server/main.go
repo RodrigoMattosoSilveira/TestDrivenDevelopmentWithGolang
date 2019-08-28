@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"log"
@@ -114,14 +115,29 @@ func healthz() http.Handler {
 // ..
 func moneyExampleBasic() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
 		if r.URL.Path != "/tdd/moneyExampleBasic" {
 			http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
 			return
 		}
+
+		// https://www.restapiexample.com/golang-tutorial/marshal-and-unmarshal-of-struct-data-using-golang/
+		logger := log.New(os.Stdout, "http: ", log.LstdFlags)
+		type MoneyExampleBasic struct {
+			Title string
+		}
+		m := MoneyExampleBasic{Title: "Money Example - Basic"}
+		logger.Println("main.moneyExampleBasic.m: ", m)
+
 		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 		w.Header().Set("X-Content-Type-Options", "nosniff")
 		w.WriteHeader(http.StatusOK)
-		fmt.Fprintln(w, "Money Example - Basic")
+		data, err := json.Marshal(m)
+		if err != nil {
+			log.Fatal("Cannot encode to JSON ", err)
+		}
+		logger.Println("main.moneyExampleBasic.data: ", string(data))
+		fmt.Fprintln(w, string(data))
 	})
 }
 
