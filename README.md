@@ -8,6 +8,8 @@ I decided to write the software in Kent Beck's [Test-Driven Development By Examp
 
 I'll show the examples’ output using the [Angular application framework](https://angular.io/) connected to a [simple Golang web server](https://github.com/enricofoltran/simple-go-server) server acting as our Back End for a Front End, BFF.
 
+To make things a bit more interesting, I'll also refactor the e2e tests to use [Cucumber](https://cucumber.io/docs/guides/overview/) instead of Jasmine.
+
 This repository captures the software I'm writing in this learning journey.
 
 # The repository
@@ -61,6 +63,8 @@ The BFF server listens to a port (5000) different than the Angular application (
 ### angular.json
 
 # References
+- [Cucumber](https://cucumber.io/docs/guides/overview/);
+- [How to Set Up Angular E2E Testing with Cucumber](https://www.amadousall.com/angular-e2e-with-cucumber/);
 - [Init array of structs in Go](https://stackoverflow.com/questions/26159416/init-array-of-structs-in-go);
 - [Marshal and unMarshal of Struct to JSON in Golang](https://www.restapiexample.com/golang-tutorial/marshal-and-unmarshal-of-struct-data-using-golang/) - I struggled with the explanation in the The Go Programming Language book, and found solace with this blog;
 - [nodemon](https://nodemon.io/) - a Node utility to monitor for any changes in your source and automatically restart your server; I used to monitor to server, since I get the client monitoring for free from the Angular;  
