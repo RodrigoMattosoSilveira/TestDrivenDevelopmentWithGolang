@@ -2,7 +2,13 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
 
 # Introduction
-My objective is to write the examples in Kent Beck [Test-Driven Development By Example](https://www.eecs.yorku.ca/course_archive/2003-04/W/3311/sectionM/case_studies/money/KentBeck_TDD_byexample.pdf) using [Golang](https://golang.org/project/) to learn how to use the [Golang test framework](https://golang.org/pkg/testing/). The examples’ output will be shown by an an Angular application connected to a [simple Golang web server](https://github.com/enricofoltran/simple-go-server); my objective  is to learn Golang networking capabilities and grow this web server into a Golang Back End for a Front End, BFF.
+I'm learning GO. After reading the first 5 chapters of Donovan & Kernighan's excellent and highly recommended The Go Programming Language I decided to switch tack to a more hand's approach with the objective to learn GO's test capabilities and integrate GO with Angular using the back end for front end, BFF, pattern.
+
+I decided to write the software in Kent Beck's [Test-Driven Development By Example](https://www.eecs.yorku.ca/course_archive/2003-04/W/3311/sectionM/case_studies/money/KentBeck_TDD_byexample.pdf) in GO, enabling me to learn [Golang test framework](https://golang.org/pkg/testing/) while translating a classical testing text to GO.
+
+I'll show the examples’ output using the [Angular application framework](https://angular.io/) connected to a [simple Golang web server](https://github.com/enricofoltran/simple-go-server) server acting as our Back End for a Front End, BFF.
+
+This repository captures the software I'm writing in this learning journey.
 
 # The repository
 I will use a simple Angular structure to integrate the Angular application and the BFF.
