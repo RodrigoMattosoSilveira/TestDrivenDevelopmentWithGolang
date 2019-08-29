@@ -13,7 +13,8 @@ exports.config = {
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
-  framework: 'jasmine',
+  framework: 'custom',
+  frameworkPath: require.resolve('protractor-cucumber-framework'),
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
