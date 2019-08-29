@@ -15,6 +15,9 @@ exports.config = {
   baseUrl: 'http://localhost:4200/',
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
+  cucumberOpts: {
+   require: ['./src/steps/**/*.steps.ts'],
+  },
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
