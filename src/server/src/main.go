@@ -115,29 +115,20 @@ func healthz() http.Handler {
 // ..
 func moneyExampleBasic() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		logger := log.New(os.Stdout, "http: ", log.LstdFlags)
 
 		if r.URL.Path != "/tdd/moneyExampleBasic" {
 			http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
 			return
 		}
 
-		// https://www.restapiexample.com/golang-tutorial/marshal-and-unmarshal-of-struct-data-using-golang/
-		logger := log.New(os.Stdout, "http: ", log.LstdFlags)
-		type MoneyExampleBasic struct {
-			Title string
-		}
-		m := MoneyExampleBasic{Title: "Money Example - Basic"}
-		logger.Println("main.moneyExampleBasic.m: ", m)
+		td := GetTestData()
+		logger.Println("main.moneyExampleBasic.data: ", string(td))
 
 		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 		w.Header().Set("X-Content-Type-Options", "nosniff")
 		w.WriteHeader(http.StatusOK)
-		data, err := json.Marshal(m)
-		if err != nil {
-			log.Fatal("Cannot encode to JSON ", err)
-		}
-		logger.Println("main.moneyExampleBasic.data: ", string(data))
-		fmt.Fprintln(w, string(data))
+		fmt.Fprintln(w, string(td))
 	})
 }
 
@@ -168,4 +159,24 @@ func tracing(nextRequestID func() string) func(http.Handler) http.Handler {
 			next.ServeHTTP(w, r.WithContext(ctx))
 		})
 	}
+}
+
+// GetTestData returns the JSON encoding of out test data, td.
+func GetTestData() []byte {
+	type TestData struct {
+		Title string
+	}
+
+	// https://www.restapiexample.com/golang-tutorial/marshal-and-unmarshal-of-struct-data-using-golang/
+	logger := log.New(os.Stdout, "http: ", log.LstdFlags)
+	td := TestData{Title: "Money Example - Basic"}
+	logger.Println("basic.GetTestData.td: ", td)
+
+	tdJSON, err := json.Marshal(td)
+	if err != nil {
+		log.Fatal("Cannot encode to JSON ", err)
+	}
+	logger.Println("basic.GetTestData.tdJSON: ", string(tdJSON))
+
+	return tdJSON
 }
