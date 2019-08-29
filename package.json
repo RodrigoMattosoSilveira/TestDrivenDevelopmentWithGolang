@@ -12,8 +12,8 @@
     "app:start:aot": "ng serve --aot",
     "dev:run": "run-p app:start:aot server:run:watch",
     "server:build": "run-s server:compile server:run",
-    "server:compile": "go build -o dist/server/main src/server/main.go",
-    "server:run": "./dist/server/main",
+    "server:compile": "go build -o dist/server/bin/main src/server/src/main.go",
+    "server:run": "./dist/server/bin/main",
     "server:run:watch": "nodemon --delay 2000ms --signal SIGINT --watch src/server --ext go --ignore *.test.go --exec 'yarn server:build'"
   },
   "private": true,
