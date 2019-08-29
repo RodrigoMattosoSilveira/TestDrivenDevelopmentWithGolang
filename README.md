@@ -57,6 +57,7 @@ The BFF server listens to a port (5000) different than the Angular application (
 # References
 - [Marshal and unMarshal of Struct to JSON in Golang](https://www.restapiexample.com/golang-tutorial/marshal-and-unmarshal-of-struct-data-using-golang/) - I struggled with the explanation in the The Go Programming Language book, and found solace with this blog;
 - [nodemon](https://nodemon.io/) - a Node utility to monitor for any changes in your source and automatically restart your server; I used to monitor to server, since I get the client monitoring for free from the Angular;  
-- [npm-run-all](https://www.npmjs.com/package/npm-run-all) - A CLI tool to run multiple npm-scripts in parallel or sequential.
+- [npm-run-all](https://www.npmjs.com/package/npm-run-all) - A CLI tool to run multiple npm-scripts in parallel or sequential;
+- [Parsing JSON files With Golang](https://tutorialedge.net/golang/parsing-json-with-golang/) - Simple examples;
 - [Proxy To Backend](https://github.com/angular/angular-cli/wiki/stories-proxy) - Used to route BFF requests;
-- [The Go Programming Language source code](https://github.com/adonovan/gopl.io) - with examples in The Go Programming Language book, from which I borrowed profusely.
+- [The Go Programming Language source code](https://github.com/adonovan/gopl.io) - with examples in The Go Programming Language book, from which I borrowed profusely;
