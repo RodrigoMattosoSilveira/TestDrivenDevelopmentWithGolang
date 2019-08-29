@@ -163,20 +163,47 @@ func tracing(nextRequestID func() string) func(http.Handler) http.Handler {
 
 // GetTestData returns the JSON encoding of out test data, td.
 func GetTestData() []byte {
+
+	type Asset struct {
+		Underwritter string  `json:"underwritter"`
+		Quantity     float64 `json:"quantity"`
+		Price        float64 `json:"price"`
+		Total        float64 `json:"total"`
+	}
 	type TestData struct {
-		Title string
+		Title  string  `json:"title"`
+		Assets []Asset `json:"assets"`
+		Total  float64 `json:"total"`
 	}
 
 	// https://www.restapiexample.com/golang-tutorial/marshal-and-unmarshal-of-struct-data-using-golang/
 	logger := log.New(os.Stdout, "http: ", log.LstdFlags)
-	td := TestData{Title: "Money Example - Basic"}
+
+	var td = TestData{
+		Title: "Money Example - Basic",
+		Assets: []Asset{
+			Asset{
+				Underwritter: "IBM",
+				Quantity:     1000,
+				Price:        25.00,
+				Total:        25000.00,
+			},
+			Asset{
+				Underwritter: "GE",
+				Quantity:     400,
+				Price:        100.00,
+				Total:        40000.00,
+			},
+		},
+		Total: 65000.00,
+	}
 	logger.Println("basic.GetTestData.td: ", td)
 
 	tdJSON, err := json.Marshal(td)
 	if err != nil {
 		log.Fatal("Cannot encode to JSON ", err)
 	}
-	logger.Println("basic.GetTestData.tdJSON: ", string(tdJSON))
+	logger.Println("main.GetTestData.tdJSON: ", string(tdJSON))
 
 	return tdJSON
 }

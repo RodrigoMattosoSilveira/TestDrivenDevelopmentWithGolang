@@ -10,29 +10,28 @@ import { TddServerService } from '../utils/tdd-server.service';
 })
 export class MoneyExampleBasicComponent implements OnInit {
    title: string;
-   basicMoneyExampleData: BasicMoneyExampleData;
+   basicMoneyExampleData: BasicMoneyExampleData = {
+      "title": "",
+      "assets": [],
+      "total": 0
+   };
    displayedColumns: string[] = ['underwriter', 'quantity', 'price', 'total'];
 
   constructor(private tddServerService: TddServerService) { }
 
   ngOnInit() {
-      this.basicMoneyExampleData = this.tddServerService.getBasicMoneyExampleData();
-      console.log("MoneyExampleBasicComponent/basicMoneyExampleData: " + JSON.stringify(this.basicMoneyExampleData))
-
       this.tddServerService.getMoneyExampleBasic().subscribe(
          // (results: string) => this.title = results, // success path
          // error =>  this.title = "Unable to retrieve title" // error path
          results =>{
             console.log("MoneyExampleBasicComponent/basicMoneyExampleData: " + JSON.stringify(results));
-            this.title = results["Title"];
-         });
+            this.basicMoneyExampleData.title = results["title"];
+            this.basicMoneyExampleData.assets = results["assets"];
+            this.basicMoneyExampleData.total = results["total"];
+         }
+      );
   }
 
   ngAfterViewInit() {
-     // Was getting ExpressionChangedAfterItHasBeenCheckedError errors
-     // Read this: https://hackernoon.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4
-     // Move it to ngOnInit
-     // this.basicMoneyExampleData = this.testDrivenDevelopmentServerService.getBasicMoneyExampleData();
-     // console.log("MoneyExampleBasicComponent/basicMoneyExampleData: " + JSON.stringify(this.basicMoneyExampleData))
   }
 }

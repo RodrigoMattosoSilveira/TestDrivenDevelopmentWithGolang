@@ -29,6 +29,7 @@ export class TddServerService {
       assets.push(ibmAsset);
       assets.push(geAsset);
       let basicMoneyExampleData: BasicMoneyExampleData = {
+         "title": "",
          "assets": assets,
          "total": 65000
       }
