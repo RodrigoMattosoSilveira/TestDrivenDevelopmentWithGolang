@@ -55,6 +55,7 @@ The BFF server listens to a port (5000) different than the Angular application (
 ### angular.json
 
 # References
+- [Init array of structs in Go](https://stackoverflow.com/questions/26159416/init-array-of-structs-in-go);
 - [Marshal and unMarshal of Struct to JSON in Golang](https://www.restapiexample.com/golang-tutorial/marshal-and-unmarshal-of-struct-data-using-golang/) - I struggled with the explanation in the The Go Programming Language book, and found solace with this blog;
 - [nodemon](https://nodemon.io/) - a Node utility to monitor for any changes in your source and automatically restart your server; I used to monitor to server, since I get the client monitoring for free from the Angular;  
 - [npm-run-all](https://www.npmjs.com/package/npm-run-all) - A CLI tool to run multiple npm-scripts in parallel or sequential;
