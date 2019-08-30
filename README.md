@@ -62,8 +62,20 @@ The BFF server listens to a port (5000) different than the Angular application (
 ### package.json
 ### angular.json
 
+# Testing
+## Client
+We will use [Cucumber](https://cucumber.io/docs/guides/overview/) for e2e tests; see [How to Set Up Angular E2E Testing with Cucumber](https://www.amadousall.com/angular-e2e-with-cucumber/); for details of how I set it up;
+## BFF
+We will use [Golang test framework](https://golang.org/pkg/testing/); see for how I set it up. One additional detail related to `GOPATH`; you must set up your GOPATH and select the package you want to test:
+````
+export GOPATH=/Users/rodrigosilveira/projects/TestDrivenDevelopmentWithGolang
+go test server/src
+````
+
 # References
 - [Cucumber](https://cucumber.io/docs/guides/overview/);
+- [Go By Example - JSON](https://gobyexample.com/json);
+- [Golang basics - writing unit tests](https://blog.alexellis.io/golang-writing-unit-tests/);
 - [How to Set Up Angular E2E Testing with Cucumber](https://www.amadousall.com/angular-e2e-with-cucumber/);
 - [Init array of structs in Go](https://stackoverflow.com/questions/26159416/init-array-of-structs-in-go);
 - [Marshal and unMarshal of Struct to JSON in Golang](https://www.restapiexample.com/golang-tutorial/marshal-and-unmarshal-of-struct-data-using-golang/) - I struggled with the explanation in the The Go Programming Language book, and found solace with this blog;
