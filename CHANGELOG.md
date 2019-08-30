@@ -6,4 +6,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.0.1] - 2019-08-29
 #### Released
-* Angular Client and Go BFF integrated and working;
+* A repository hosting an application consisting of an Angular client, using Cucumber for e2e tests, connected to a BFF written in GO, and using the GO test framework for unit tests.
