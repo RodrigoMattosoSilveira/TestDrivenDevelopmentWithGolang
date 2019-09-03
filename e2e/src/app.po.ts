@@ -8,4 +8,8 @@ export class AppPage {
   getTitleText() {
     return element(by.css('app-root span a')).getText() as Promise<string>;
   }
+
+  getAuthorName() {
+    return element(by.css('body app-root mat-toolbar span a span')).getText() as Promise<string>;
+  }
 }

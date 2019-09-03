@@ -18,3 +18,7 @@ When(/^I do nothing$/, () => {});
 Then(/^I should see the title$/, async () => {
   expect(await page.getTitleText()).to.equal('TDD GOLANG');
 });
+
+Then(/^I should see the author name$/, async () => {
+  expect(await page.getAuthorName()).to.equal('Rodrigo Silveira');
+});
