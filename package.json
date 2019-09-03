@@ -12,7 +12,9 @@
     "dev:run": "run-p app:start:aot server:run:watch",
     "server:build": "run-s server:compile server:run",
     "server:compile": "go build -o dist/server/bin/main server/src/main.go",
+    "server:go:path": "export GOPATH=/Users/rodrigosilveira/projects/TestDrivenDevelopmentWithGolang",
     "server:run": "./dist/main",
+    "server:test": "yarn server:go:path && go test -v ./server/src",
     "server:run:watch": "nodemon --delay 2000ms --signal SIGINT --watch src/server --ext go --ignore *.test.go --exec 'yarn server:build'"
   },
   "private": true,

@@ -3,7 +3,7 @@ package main
 //what it took for this test to pass
 //
 // export GOPATH=/Users/rodrigosilveira/projects/TestDrivenDevelopmentWithGolang
-// go test server/src
+// go test -v ./server/src
 
 import (
 	"encoding/json"
