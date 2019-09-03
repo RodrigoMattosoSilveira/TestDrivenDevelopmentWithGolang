@@ -1,8 +1,7 @@
 import { AngularMaterialModuleModule } from './utils/angular-material-module/angular-material-module.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { NgModule } from '@angular/core';
 
@@ -24,9 +23,8 @@ import { TddServerService} from './utils/tdd-server.service';
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
-    HttpModule,
     MarkdownModule.forRoot({
-      loader: HttpClient, // optional, only if you use [src] attribute
+      // loader: HttpClient, // optional, only if you use [src] attribute
       markedOptions: {
       provide: MarkedOptions,
       useValue: {
