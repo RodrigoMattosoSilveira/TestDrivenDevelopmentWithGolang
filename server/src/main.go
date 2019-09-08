@@ -165,7 +165,7 @@ func tracing(nextRequestID func() string) func(http.Handler) http.Handler {
 func GetTestData() []byte {
 
 	type Asset struct {
-		Underwritter string  `json:"underwritter"`
+		Underwritter string  `json:"underwriter"`
 		Quantity     float64 `json:"quantity"`
 		Price        float64 `json:"price"`
 		Total        float64 `json:"total"`
