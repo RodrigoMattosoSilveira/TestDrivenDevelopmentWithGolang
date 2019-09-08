@@ -10,12 +10,12 @@
     "e2e": "ng e2e --port 4201",
     "app:start:aot": "ng serve --aot",
     "dev:run": "run-p app:start:aot server:run:watch",
-    "server:build": "run-s server:compile server:run",
-    "server:compile": "go build -o dist/server/bin/main server/src/main.go",
+    "server:build": "run-s server:go:path server:compile server:run",
+    "server:compile": "go build -o dist/main server/src/main.go",
     "server:go:path": "export GOPATH=/Users/rodrigosilveira/projects/TestDrivenDevelopmentWithGolang",
     "server:run": "./dist/main",
     "server:test": "yarn server:go:path && go test -v -count=1 ./server/src",
-    "server:run:watch": "nodemon --delay 2000ms --signal SIGINT --watch src/server --ext go --ignore *.test.go --exec 'yarn server:build'"
+    "server:run:watch": "nodemon --delay 2000ms --signal SIGINT --watch server --ext go --ignore *.test.go --exec 'yarn server:build'"
   },
   "private": true,
   "dependencies": {
